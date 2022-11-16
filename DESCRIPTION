@@ -1,17 +1,22 @@
 Package: how2
-Title: An Amazing Shiny App
+Title: PKG_TITLE
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
-License: What license is it under?
+    person("AUTHOR_FIRST", "AUTHOR_LAST", , "AUTHOR@MAIL.COM", role = c("cre", "aut"))
+Description: PKG_DESC.
+License: MIT + file LICENSE
 Imports: 
+    bs4Dash,
     config (>= 0.3.1),
+    dplyr,
     golem (>= 0.3.5),
+    magrittr,
     shiny (>= 1.7.3)
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
+Language: en-US
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1

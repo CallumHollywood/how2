@@ -3,14 +3,43 @@
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
 #' @import shiny
+#' @import bs4Dash
 #' @noRd
+
+
+iframe_records <- readr::read_csv('data-raw/iframe_records.csv')
+
+
+
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-      h1("how2")
+    dashboardPage(
+      dashboardHeader(title = "Basic dashboard"),
+      dashboardSidebar(),
+      dashboardBody(
+        # Boxes need to be put in a row (or column)
+        fluidRow(
+          box(
+            width = 12,
+            selectInput('slt_iframe',
+                        'Select',
+                        choices = iframe_records$howto
+            ),
+            br(),
+            actionButton('btn_fetch', 'Fetch')
+          ),
+        ),
+        br(),
+        fluidRow(
+          box(
+            width = 12,
+            uiOutput('ot_iframe')
+          )
+        )
+      )
     )
   )
 }
