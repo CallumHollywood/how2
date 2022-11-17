@@ -29,7 +29,7 @@ app_ui <- function(request) {
                         choices = iframe_records$howto
             ),
             br(),
-            actionButton('btn_fetch', 'Fetch')
+            actionButton('btn_fetch', 'Fetch', class = 'my_button')
           ),
         ),
         br(),
@@ -63,7 +63,11 @@ golem_add_external_resources <- function() {
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "how2"
-    )
+    ),
+    tags$head(tags$link(rel = "stylesheet", href = "styles.css")),
+    tags$head(tags$link(rel = "preconnect", href = "https://fonts.googleapis.com")),
+    tags$head(tags$link(rel = "preconnect", href = "https://fonts.gstatic.com")),
+    tags$head(tags$link(rel = "stylesheet", href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"))
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
   )

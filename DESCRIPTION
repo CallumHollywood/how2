@@ -9,6 +9,7 @@ Imports:
     bs4Dash,
     config (>= 0.3.1),
     dplyr,
+    fresh,
     golem (>= 0.3.5),
     magrittr,
     shiny (>= 1.7.3)
